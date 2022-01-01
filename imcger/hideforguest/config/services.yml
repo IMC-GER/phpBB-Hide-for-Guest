@@ -1,0 +1,10 @@
+services:
+    imcger.hideforguest.listener:
+        class: imcger\hideforguest\event\main_listener
+        arguments:
+            - '@config'
+            - '@template'
+            - '@user'
+            - '@language'
+        tags:
+            - { name: event.listener }

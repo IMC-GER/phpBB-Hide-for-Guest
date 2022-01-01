@@ -1,0 +1,25 @@
+{
+		"name": "imcger/hideforguest",
+		"type": "phpbb-extension",
+		"description": "Hide for Guest Our newest member, Statistics or Who is online",
+		"homepage": "https://github.com/IMC-GER/phpBB-Hide-for-Guest",
+		"version": "1.0.0",
+		"time": "2022-01-01",
+		"license": "GPL-2.0-only",
+		"authors": [
+					{
+					"name": "Thorsten Ahlers",
+					"homepage": "",
+					"role": "Developer"
+					}
+					],
+		"require": {
+					"php": ">=7.3"
+				},
+		"extra": {
+					"display-name": "Hide for Guest",
+					"soft-require": {
+					"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+					}
+				}
+}

@@ -1,0 +1,40 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{{ lang('HIDEFORGUEST_TITLE') }}</h1>
+
+<p>{{ lang('HIDEFORGUEST_TITLE_DESC') }}</p>
+
+<form id="acp_board" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{{ lang('HIDEFORGUEST_TITLE_SET') }}</legend>
+		<dl>
+			<dt><label for="imcger_hideforguest_newest_user">{{ lang('HIDEFORGUEST_NEWEST_USER') }} {{ lang('COLON') }}</label><br><span>{{ lang('HIDEFORGUEST_NEWEST_USER_DESC') }}</span></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="imcger_hideforguest_newest_user" name="imcger_hideforguest_newest_user" value='0'{% if not IMCGER_HIDEFORGUEST_NEWEST_USER %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="imcger_hideforguest_newest_user" value='1'{% if IMCGER_HIDEFORGUEST_NEWEST_USER %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt><label for="imcger_hideforguest_statistics">{{ lang('HIDEFORGUEST_STATISTICS') }} {{ lang('COLON') }}</label><br><span>{{ lang('HIDEFORGUEST_STATISTICS_DESC') }}</span></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="imcger_hideforguest_statistics" name="imcger_hideforguest_statistics" value='0'{% if not IMCGER_HIDEFORGUEST_STATISTICS %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="imcger_hideforguest_statistics" value='1'{% if IMCGER_HIDEFORGUEST_STATISTICS %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt><label for="imcger_hideforguest_online_list">{{ lang('HIDEFORGUEST_ONLINE_LIST') }} {{ lang('COLON') }}</label><br>
+				<span>{{ lang('HIDEFORGUEST_ONLINE_LIST_DESC') }}</span>{% if not S_DISPLAY_ONLINE_LIST %}<br><span style="color: red">{{ lang('BOARDSETTING_ONLINE_LIST_DESC') }}</span>{% endif %}
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="imcger_hideforguest_online_list" name="imcger_hideforguest_online_list" value='0'{% if not IMCGER_HIDEFORGUEST_ONLINE_LIST and S_DISPLAY_ONLINE_LIST %} checked="checked"{% endif %}{% if not S_DISPLAY_ONLINE_LIST %} disabled{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="imcger_hideforguest_online_list" value='1'{% if IMCGER_HIDEFORGUEST_ONLINE_LIST or not S_DISPLAY_ONLINE_LIST %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}"/>
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->
