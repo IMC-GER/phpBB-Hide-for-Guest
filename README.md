@@ -1,7 +1,7 @@
 # phpBB-Hide for Guest
 
 ## Description
-Whith "Hide for guest" selected areas are hidden for guests and bots.
+With "Hide for guest" selected areas are hidden for guests and bots.
 
 ## Requirements
 - php 7.3 or higher
