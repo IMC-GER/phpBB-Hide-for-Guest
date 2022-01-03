@@ -20,6 +20,9 @@ Go to "ACP" > "Extensions" > "Hide for Guest settings" and customize "Hide for G
 
 ## Changelog
 
+### v1.0.1 (03-01-2022)
+- minor code change
+
 ### v1.0.0 (01-01-2022)
 
 ## Uninstallation
