@@ -3,8 +3,8 @@
 		"type": "phpbb-extension",
 		"description": "Hide for Guest Our newest member, Statistics or Who is online",
 		"homepage": "https://github.com/IMC-GER/phpBB-Hide-for-Guest",
-		"version": "1.0.0",
-		"time": "2022-01-01",
+		"version": "1.0.1",
+		"time": "2022-01-03",
 		"license": "GPL-2.0-only",
 		"authors": [
 					{

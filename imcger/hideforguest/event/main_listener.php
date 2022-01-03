@@ -65,14 +65,14 @@ class main_listener implements EventSubscriberInterface
 
 			$imcger_hideforguest_newest_user = $this->config['imcger_hideforguest_newest_user'];
 			$imcger_hideforguest_online_list = $this->config['imcger_hideforguest_online_list'];
+			$imcger_hideforguest_statistics 	= $this->config['imcger_hideforguest_statistics'];
 
 			/* JS aktivieren wenn Statistik vom Board ein und Anzeige neuer User über Ext aus */
 			$imcger_hideforguest_newest_user = ((bool)$newest_user && !$imcger_hideforguest_newest_user) ? 0 : 1;
 			
 			/* Wenn Statistik vom Board ein und Anzeige neuer User über Ext aus eine
 			   Marke setzen die von JS erkannt wird und inclusive des Bullet entfernt wird */
-			$imcger_hideforguest_statistics = $imcger_hideforguest_newest_user ? '???' : $newest_user;
-			$imcger_hideforguest_statistics = $this->config['imcger_hideforguest_statistics'] ? 0 : $imcger_hideforguest_statistics;
+			$imcger_hideforguest_statistics = $imcger_hideforguest_statistics ? 0 : ($imcger_hideforguest_newest_user ? '???' : $newest_user);
 
 			/* "Wer ist online" für Gäste ausblenden */
 			$imcger_hideforguest_online_list = $l_online_time ? !$imcger_hideforguest_online_list : 0;
