@@ -22,6 +22,8 @@ Go to "ACP" > "Extensions" > "Hide for Guest settings" and customize "Hide for G
 
 ### v1.0.1 (03-01-2022)
 - minor code change
+- Add no break spaces in statistic line
+- Add dependencies of radio buttons in ACP settings
 
 ### v1.0.0 (01-01-2022)
 
