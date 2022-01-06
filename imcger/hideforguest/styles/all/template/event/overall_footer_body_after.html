@@ -5,9 +5,9 @@
 	var statText = statElem[0].innerHTML;
 	
 	statElem[0].innerHTML = statText.replace(/(?<=[a-zA-Z<>:])(\s)(?=([a-zA-Z<>]))/g, '&nbsp;');
-{% endif %}
-{% if S_NEWEST_USER %}
-	statText = statElem[0].innerHTML;
-	statElem[0].innerHTML = statText.replace(hideText, '');
-{% endif %}
+	{% if S_NEWEST_USER %}
+		statText = statElem[0].innerHTML;
+		statElem[0].innerHTML = statText.replace(hideText, '');
+	{% endif %}
 </script>
+{% endif %}
