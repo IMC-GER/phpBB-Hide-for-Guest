@@ -4,7 +4,7 @@
  * Implements Hide for Guest in phpBB. 
  * An extension for the phpBB Forum Software package.
  *
- * @copyright (c) 2021, Thorsten Ahlers
+ * @copyright (c) 2022, Thorsten Ahlers
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  */

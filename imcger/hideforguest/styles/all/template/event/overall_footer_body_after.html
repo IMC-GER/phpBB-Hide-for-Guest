@@ -1,13 +1,23 @@
 {% if NEWEST_USER %}
 <script>
 	var statElem  = document.querySelectorAll(".statistics > p");
-	var hideText = String.fromCharCode( 32, 8226, 32, 63, 63, 63);
-	var statText = statElem[0].innerHTML;
 	
-	statElem[0].innerHTML = statText.replace(/(?<=[a-zA-Z<>:])(\s)(?=([a-zA-Z<>]))/g, '&nbsp;');
-	{% if S_NEWEST_USER %}
-		statText = statElem[0].innerHTML;
-		statElem[0].innerHTML = statText.replace(hideText, '');
-	{% endif %}
+	if(statElem.length) {
+		var hideText = ' • ???';
+		var statText = statElem[0].innerHTML.trim();
+		
+		/* Funktion arbeitet leider nicht unter Safari, iPhone */	
+		/* statText = statText.replace(/(?<=[a-zA-Z>:])(\s)(?=([a-zA-Z<]))/g, '&nbsp;'); */
+		
+		statText = statText.replace(/\s+/g, '&nbsp;');
+		statText = statText.replace(/(\&nbsp\;\•\&nbsp\;)/g, ' • ');
+		
+		{% if S_NEWEST_USER %}
+		if(statText.includes(hideText)) {
+			statText = statText.replace(hideText, '');
+		}
+		{% endif %}
+		statElem[0].innerHTML = statText;
+	} 
 </script>
 {% endif %}

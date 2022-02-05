@@ -20,6 +20,9 @@ Go to "ACP" > "Extensions" > "Hide for Guest settings" and customize "Hide for G
 
 ## Changelog
 
+### v1.0.3 (05-02-2022)
+- Bug in JS, `regexp` don't work in iPhone Safari
+
 ### v1.0.2 (06-01-2022)
 - Bug in JS
 
