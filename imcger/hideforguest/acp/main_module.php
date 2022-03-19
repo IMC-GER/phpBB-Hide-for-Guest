@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * Implements Hide for Guest in phpBB. 
+ * Implements Hide for Guest in phpBB.
  * An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2022, Thorsten Ahlers
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  */
- 
+
 namespace imcger\hideforguest\acp;
 
 /**
@@ -35,11 +35,11 @@ class main_module
 			{
 				trigger_error('FORM_INVALID', E_USER_WARNING);
 			}
-			
+
 			$config->set('imcger_hideforguest_newest_user', $request->variable('imcger_hideforguest_newest_user', 1));
 			$config->set('imcger_hideforguest_statistics', $request->variable('imcger_hideforguest_statistics', 1));
 			$config->set('imcger_hideforguest_online_list', $request->variable('imcger_hideforguest_online_list', 1));
-			
+
 			trigger_error($user->lang('ACP_HIDEFORGUEST_SETTING_SAVED') . adm_back_link($this->u_action));
 		}
 

@@ -4,7 +4,7 @@
 With "Hide for guest" selected areas are hidden for guests and bots.
 
 ## Requirements
-- php 7.3 or higher
+- php 5.4.7 or higher
 - phpBB 3.2.0 or higher
 
 ## Installation
@@ -19,6 +19,9 @@ Go to "ACP" > "Extensions" > "Hide for Guest settings" and customize "Hide for G
 - Hide the "Who is online" area.
 
 ## Changelog
+
+### v1.0.4 (18-03-2022)
+- Cleanup code
 
 ### v1.0.3 (05-02-2022)
 - Bug in JS, `regexp` don't work in iPhone Safari

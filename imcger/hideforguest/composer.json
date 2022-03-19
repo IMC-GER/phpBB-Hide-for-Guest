@@ -1,25 +1,25 @@
 {
-		"name": "imcger/hideforguest",
-		"type": "phpbb-extension",
-		"description": "Hide for Guest Our newest member, Statistics or Who is online",
-		"homepage": "https://github.com/IMC-GER/phpBB-Hide-for-Guest",
-		"version": "1.0.3",
-		"time": "2022-02-05",
-		"license": "GPL-2.0-only",
-		"authors": [
-					{
-					"name": "Thorsten Ahlers",
-					"homepage": "",
-					"role": "Developer"
-					}
-					],
-		"require": {
-					"php": ">=7.3"
-				},
-		"extra": {
-					"display-name": "Hide for Guest",
-					"soft-require": {
-					"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
-					}
+	"name": "imcger/hideforguest",
+	"type": "phpbb-extension",
+	"description": "Hide for Guest Our newest member, Statistics or Who is online",
+	"homepage": "https://github.com/IMC-GER/phpBB-Hide-for-Guest",
+	"version": "1.0.4",
+	"time": "2022-03-18",
+	"license": "GPL-2.0-only",
+	"authors": [
+				{
+				"name": "Thorsten Ahlers",
+				"homepage": "https://github.com/IMC-GER",
+				"role": "Developer"
 				}
+				],
+	"require": {
+				"php": ">=5.4.7"
+			},
+	"extra": {
+				"display-name": "Hide for Guest",
+				"soft-require": {
+				"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+				}
+			}
 }

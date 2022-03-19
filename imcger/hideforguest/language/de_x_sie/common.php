@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Implements Hide for Guest in phpBB. 
+ * Implements Hide for Guest in phpBB.
  * An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2022, Thorsten Ahlers

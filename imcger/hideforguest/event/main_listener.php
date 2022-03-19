@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Implements Hide for Guest in phpBB. 
+ * Implements Hide for Guest in phpBB.
  * An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2022, Thorsten Ahlers
@@ -29,16 +29,16 @@ class main_listener implements EventSubscriberInterface
 
 	/** @var \phpbb\user */
 	protected $user;
-	
+
 	/** @var \phpbb\language\language */
 	protected $language;
 
 
 	public function __construct
 	(
-		\phpbb\config\config $config, 
-		\phpbb\template\template $template, 
-		\phpbb\user $user, 
+		\phpbb\config\config $config,
+		\phpbb\template\template $template,
+		\phpbb\user $user,
 		\phpbb\language\language $language
 	)
 	{
@@ -48,16 +48,16 @@ class main_listener implements EventSubscriberInterface
 		$this->language = $language;
 	}
 
-	static public function getSubscribedEvents()
+	public  static function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header_after'	=>	'hide_for_guest_vars',
+			'core.page_header_after' => 'hide_for_guest_vars',
 		);
 	}
 
 	public function hide_for_guest_vars()
 	{
-		if(!$this->user->data['is_registered'] || $this->user->data['is_bot'])
+		if (!$this->user->data['is_registered'] || $this->user->data['is_bot'])
 		{
 			// Werte vom Board ...
 			$newest_user	= $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour']));
@@ -65,11 +65,11 @@ class main_listener implements EventSubscriberInterface
 
 			$imcger_hideforguest_newest_user = $this->config['imcger_hideforguest_newest_user'];
 			$imcger_hideforguest_online_list = $this->config['imcger_hideforguest_online_list'];
-			$imcger_hideforguest_statistics 	= $this->config['imcger_hideforguest_statistics'];
+			$imcger_hideforguest_statistics	 = $this->config['imcger_hideforguest_statistics'];
 
 			/* JS aktivieren wenn Statistik vom Board ein und Anzeige neuer User über Ext aus */
-			$imcger_hideforguest_newest_user = ((bool)$newest_user && !$imcger_hideforguest_newest_user) ? 0 : 1;
-			
+			$imcger_hideforguest_newest_user = ((bool) $newest_user && !$imcger_hideforguest_newest_user) ? 0 : 1;
+
 			/* Wenn Statistik vom Board ein und Anzeige neuer User über Ext aus eine
 			   Marke setzen die von JS erkannt wird und inclusive des Bullet entfernt wird */
 			$imcger_hideforguest_statistics = $imcger_hideforguest_statistics ? 0 : ($imcger_hideforguest_newest_user ? '???' : $newest_user);

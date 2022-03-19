@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Implements Hide for Guest in phpBB. 
+ * Implements Hide for Guest in phpBB.
  * An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2022, Thorsten Ahlers
@@ -18,7 +18,7 @@ class install_acp_module extends \phpbb\db\migration\migration
 		return isset($this->config['imcger_hideforguest_newest_user']);
 	}
 
-	static public function depends_on()
+	public static function depends_on()
 	{
 		return array('\phpbb\db\migration\data\v31x\v314');
 	}
