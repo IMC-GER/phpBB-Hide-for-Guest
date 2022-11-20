@@ -1,4 +1,4 @@
-<!-- INCLUDE overall_header.html -->
+{% include 'overall_header.html' %}
 
 <h1>{{ lang('HIDEFORGUEST_TITLE') }}</h1>
 
@@ -38,4 +38,13 @@
 	</fieldset>
 </form>
 
-<!-- INCLUDE overall_footer.html -->
+<script>
+	document.getElementById('imcger_hideforguest_newest_user').addEventListener('click', function () {
+			document.getElementById('imcger_hideforguest_statistics').click();
+	});
+	document.getElementById('imcger_hideforguest_statistics1').addEventListener('click', function () {
+			document.getElementById('imcger_hideforguest_newest_user1').click();
+	});
+</script>
+
+{% include 'overall_footer.html' %}
