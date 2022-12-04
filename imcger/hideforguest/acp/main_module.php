@@ -38,7 +38,11 @@ class main_module
 
 			$config->set('imcger_hideforguest_newest_user', $request->variable('imcger_hideforguest_newest_user', 1));
 			$config->set('imcger_hideforguest_statistics', $request->variable('imcger_hideforguest_statistics', 1));
-			$config->set('imcger_hideforguest_online_list', $request->variable('imcger_hideforguest_online_list', 1));
+
+			if ($request->is_set_post('imcger_hideforguest_online_list'))
+			{
+				$config->set('imcger_hideforguest_online_list', $request->variable('imcger_hideforguest_online_list', 1));
+			}
 
 			trigger_error($user->lang('ACP_HIDEFORGUEST_SETTING_SAVED') . adm_back_link($this->u_action));
 		}
