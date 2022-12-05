@@ -22,37 +22,30 @@ class main_module
 
 	public function main($id, $mode)
 	{
-		global $config, $request, $template, $user;
+		global $phpbb_container, $language;
 
-		$user->add_lang_ext('imcger/hideforguest', 'common');
-		$this->tpl_name = 'acp_hideforguest_body';
-		$this->page_title = $user->lang('ACP_HIDEFORGUEST_TITLE');
-		add_form_key('imcger/hideforguest');
+		/* Add ACP lang file */
+		$language->add_lang('common', 'imcger/hideforguest');
 
-		if ($request->is_set_post('submit'))
+		/* Get an instance of the admin controller */
+		$admin_controller = $phpbb_container->get('imcger.hideforguest.admin.controller');
+
+		/* Make the $u_action url available in the admin controller */
+		$admin_controller->set_page_url($this->u_action);
+
+		switch ($mode)
 		{
-			if (!check_form_key('imcger/hideforguest'))
-			{
-				trigger_error('FORM_INVALID', E_USER_WARNING);
-			}
+			case 'settings':
+				/* Load a template from adm/style for our ACP page */
+				$this->tpl_name = 'acp_hideforguest_body';
 
-			$config->set('imcger_hideforguest_newest_user', $request->variable('imcger_hideforguest_newest_user', 1));
-			$config->set('imcger_hideforguest_statistics', $request->variable('imcger_hideforguest_statistics', 1));
+				/* Set the page title for our ACP page */
+				$this->page_title = $language->lang('ACP_HIDEFORGUEST_TITLE');
 
-			if ($request->is_set_post('imcger_hideforguest_online_list'))
-			{
-				$config->set('imcger_hideforguest_online_list', $request->variable('imcger_hideforguest_online_list', 1));
-			}
-
-			trigger_error($user->lang('ACP_HIDEFORGUEST_SETTING_SAVED') . adm_back_link($this->u_action));
+				/* Load the display options handle in the admin controller */
+				$admin_controller->display_options();
+			break;
 		}
 
-		$template->assign_vars(array(
-			'U_ACTION'							=> $this->u_action,
-			'S_DISPLAY_ONLINE_LIST'				=> $config['load_online'],
-			'IMCGER_HIDEFORGUEST_NEWEST_USER'	=> $config['imcger_hideforguest_newest_user'],
-			'IMCGER_HIDEFORGUEST_STATISTICS'	=> $config['imcger_hideforguest_statistics'],
-			'IMCGER_HIDEFORGUEST_ONLINE_LIST'	=> $config['imcger_hideforguest_online_list'],
-		));
 	}
 }

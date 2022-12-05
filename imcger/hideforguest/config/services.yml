@@ -1,4 +1,12 @@
 services:
+    imcger.hideforguest.admin.controller:
+        class: 'imcger\hideforguest\controller\admin_controller'
+        arguments:
+            - '@config'
+            - '@template'
+            - '@language'
+            - '@request'
+
     imcger.hideforguest.listener:
         class: imcger\hideforguest\event\main_listener
         arguments:
