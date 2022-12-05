@@ -1,0 +1,11 @@
+{
+    "stable": {
+        "1.0": {
+            "current": "1.0.5",
+            "announcement": "https://www.phpbb.de/community/viewtopic.php?t=245931",
+            "download": "https://github.com/IMC-GER/phpBB-Hide-for-Guest/tags",
+            "eol": null,
+            "security": false
+        }
+    }
+}
