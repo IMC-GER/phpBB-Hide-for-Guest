@@ -3,23 +3,28 @@
 	"type": "phpbb-extension",
 	"description": "Hide for Guest Our newest member, Statistics or Who is online",
 	"homepage": "https://github.com/IMC-GER/phpBB-Hide-for-Guest",
-	"version": "1.0.4",
-	"time": "2022-03-18",
+	"version": "1.1.0",
+	"time": "2022-12-15",
 	"license": "GPL-2.0-only",
-	"authors": [
-				{
-				"name": "Thorsten Ahlers",
-				"homepage": "https://github.com/IMC-GER",
-				"role": "Developer"
-				}
-				],
+	"authors": [{
+			"name": "Thorsten Ahlers",
+			"homepage": "https://github.com/IMC-GER",
+			"role": "Developer"
+		}
+	],
 	"require": {
-				"php": ">=5.4.7"
-			},
+		"php": ">=5.4.7,<8.3.0"
+	},
 	"extra": {
-				"display-name": "Hide for Guest",
-				"soft-require": {
-				"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
-				}
-			}
+		"display-name": "Hide for Guest",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+		},
+		"version-check": {
+			"host": "raw.githubusercontent.com",
+			"directory": "/IMC-GER/phpBB-Hide-for-Guest/main",
+			"filename": "hideforguest_version.json",
+			"ssl": true
+		}
+	}
 }

@@ -22,5 +22,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_HIDEFORGUEST_TITLE' => 'Hide for Guest',
 	'ACP_HIDEFORGUEST_SETTINGS' => 'Einstellungen',
-	'ACP_HIDEFORGUEST_SETTING_SAVED' => 'Hide for Guest Einstellungen erfolgreich gespeichert.'
+	'ACP_HIDEFORGUEST_SETTING_SAVED' => 'Hide for Guest Einstellungen erfolgreich gespeichert.',
+
+	'IMCGER_REQUIRE_PHPBB' => 'Diese Erweiterung benötigt eine phpBB Version gleich oder grösser %1$s und kleiner %2$s. Deine Version ist %3$s.',
+	'IMCGER_REQUIRE_PHP' => 'Diese Erweiterung benötigt eine php Version gleich oder grösser %1$s und kleiner %2$s. Deine Version ist %3$s.',
 ));

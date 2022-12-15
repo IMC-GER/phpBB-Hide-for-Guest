@@ -50,9 +50,9 @@ class main_listener implements EventSubscriberInterface
 
 	public  static function getSubscribedEvents()
 	{
-		return array(
+		return [
 			'core.page_header_after' => 'hide_for_guest_vars',
-		);
+		];
 	}
 
 	public function hide_for_guest_vars()

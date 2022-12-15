@@ -1,17 +1,16 @@
 {% if NEWEST_USER %}
 <script>
 	var statElem  = document.querySelectorAll(".statistics > p");
-	
+
 	if(statElem.length) {
-		var hideText = ' • ???';
+		var hideText = '&nbsp;• ???';
 		var statText = statElem[0].innerHTML.trim();
-		
-		/* Funktion arbeitet leider nicht unter Safari, iPhone */	
-		/* statText = statText.replace(/(?<=[a-zA-Z>:])(\s)(?=([a-zA-Z<]))/g, '&nbsp;'); */
-		
+
+		// RegEx Lookbehind don't work with Safari
+		// statText = statText.replace(/(?<![\•])(\s+)/g, '&nbsp;');		
 		statText = statText.replace(/\s+/g, '&nbsp;');
-		statText = statText.replace(/(\&nbsp\;\•\&nbsp\;)/g, ' • ');
-		
+		statText = statText.replace(/(\&nbsp\;\•\&nbsp\;)/g, '&nbsp;• ');
+
 		{% if S_NEWEST_USER %}
 		if(statText.includes(hideText)) {
 			statText = statText.replace(hideText, '');

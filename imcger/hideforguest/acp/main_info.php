@@ -18,16 +18,16 @@ class main_info
 {
 	public function module()
 	{
-		return array(
+		return [
 			'filename'	=> '\imcger\hideforguest\acp\main_module',
 			'title'		=> 'ACP_HIDEFORGUEST_TITLE',
-			'modes'		=> array(
-				'settings'	=> array(
+			'modes'		=> [
+				'settings'	=> [
 					'title'	=> 'ACP_HIDEFORGUEST_SETTINGS',
 					'auth'	=> 'ext_imcger/hideforguest && acl_a_board',
-					'cat'	=> array('ACP_HIDEFORGUEST_TITLE'),
-				),
-			),
-		);
+					'cat'	=> ['ACP_HIDEFORGUEST_TITLE'],
+				],
+			],
+		];
 	}
 }
